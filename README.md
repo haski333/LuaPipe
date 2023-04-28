@@ -38,7 +38,6 @@ end)
 
 - To only call one client, make the first argument the target `Client/Player`
 ```lua
---Server
 local JumpscarePipe = LuaPipe:GetPipe("Jumpscare")
 
 local JumpscareData = {
@@ -48,7 +47,12 @@ JumpscarePipe:Call(Player, JumpscareData) --Jumpscares target player
 ```
 - Else, calling all clients will just be passing no `Client/Player`
 ```lua
-JumpscarePlayerPipe:Call(JumpscareData) --Jumpscares all players
+local JumpscarePipe = LuaPipe:GetPipe("Jumpscare")
+
+local JumpscareData = {
+    ["Duration"] = 1
+}
+JumpscarePipe:Call(JumpscareData) -- Jumpscares all clients/players
 ```
 ### To destroy a pipe, use the `Destroy` function
 ```lua
