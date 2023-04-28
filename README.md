@@ -10,7 +10,7 @@ local LuaPipe = require(...)
 local RedeemCodePipe = LuaPipe:GetPipe("RedeemCode") -- Gets a pipe created by the server by a name
 
 Redeem.MouseButton1Click:Connect(function() -- Event when reedem button is clicked
-    RedeemCodePipe:Send(CodeTextBox.Text) --Calls pipe and sends arguments to the receiver
+    RedeemCodePipe:Call(CodeTextBox.Text) --Calls pipe and sends arguments to the receiver
 end)
 ```
 ## Server Example
@@ -34,7 +34,26 @@ RedeemCodePipe(function(Player, Code) -- Call the pipe like a function to start 
     Player.Cash.Value += Cash -- Increases cash by the number of cash from the code
 end)
 ```
+### By default, on the server, LuaPipe takes care of calling one `Client` or `All clients`
 
+## To only call one client, make the first argument the target `Client/Player`
+```lua
+local JumpscarePipe = LuaPipe:GetPipe("Jumpscare")
+
+local JumpscareData = {
+    ["Duration"] = 1
+}
+JumpscarePipe:Call(Player, JumpscareData) --Jumpscares target player
+```
+## Else, calling all clients will just be passing no `Client/Player`
+```lua
+local JumpscarePlayerPipe = LuaPipe:GetPipe("Jumpscare") -- Creates a jumpscare pipe
+
+local JumpscareData = {
+	["Duration"] = 1
+}
+JumpscarePlayerPipe:Call(JumpscareData) --Jumpscares all players
+```
 ### To destroy a pipe, use the `Destroy` function
 ```lua
 local Pipe = LuaPipe:GetPipe("TestPipe")
