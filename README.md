@@ -33,12 +33,12 @@ RedeemCodePipe(function(Player, Code) -- Call the pipe like a function to start 
 end)
 ```
 
-### To destroy a pipe, use the `rgb(0, 162, 255)`_Destroy_ function
+### To destroy a pipe, use the `_Destroy_` function
 ```lua
 local Pipe = LuaPipe:GetPipe("TestPipe")
 Pipe:Destroy() -- Pipe will be destroyed and the server/client will not longer receive data
 ```
-### Use the _IsAvailable_ function to check if pipe is destroyed/hasn't been initialized
+### Use the `_IsAvailable_` function to check if pipe is destroyed/hasn't been initialized
 ```lua
 local Pipe = LuaPipe:GetPipe("TestPipe")
 print(Pipe:IsAvailable()) -- true
