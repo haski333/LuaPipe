@@ -3,14 +3,13 @@
 
 ## Client Example
 ```lua
-local Pythonize = require(...) -- Gets the pythonizing function using require
+local LuaPipe = require(...)
 
-local MyStrings = {"John", "Alexandra", "David"} -- A simple table with some strings of names
+local RedeemCodePipe = LuaPipe:GetPipe("RedeemCode")
 
-MyStrings = Pythonize(MyStrings) -- Pythonizes the table (offsets the index by -1)
-
-print(MyStrings[0]) -- John
-print(MyStrings[2]) -- David
+Redeem.MouseButton1Click:Connect(function()
+	RedeemCodePipe:Call(CodeTextBox.Text)
+end)
 
 ```
 
