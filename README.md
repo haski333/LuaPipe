@@ -34,9 +34,9 @@ RedeemCodePipe(function(Player, Code) -- Call the pipe like a function to start 
     Player.Cash.Value += Cash -- Increases cash by the number of cash from the code
 end)
 ```
-### By default, on the server, LuaPipe takes care of calling one `Client` or `All clients`
+## By default, on the server, LuaPipe takes care of calling one `Client` or `All clients`
 
-## To only call one client, make the first argument the target `Client/Player`
+- To only call one client, make the first argument the target `Client/Player`
 ```lua
 local JumpscarePipe = LuaPipe:GetPipe("Jumpscare")
 
@@ -45,7 +45,7 @@ local JumpscareData = {
 }
 JumpscarePipe:Call(Player, JumpscareData) --Jumpscares target player
 ```
-## Else, calling all clients will just be passing no `Client/Player`
+- Else, calling all clients will just be passing no `Client/Player`
 ```lua
 local JumpscarePlayerPipe = LuaPipe:GetPipe("Jumpscare") -- Creates a jumpscare pipe
 
