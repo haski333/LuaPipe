@@ -1,6 +1,6 @@
 <h1 align="center">LuaPipe</h1>
 
-<h4 align="center">LuaPipe is a roblox module that makes communicating between the server and clients easier</h4>
+<h3 align="center">LuaPipe is a roblox module that makes communicating between the server and clients easier</h3>
 
 ## [LuaPipe](https://github.com/haski333/LuaPipe/blob/main/LuaPipe.lua) (Installation)
 
