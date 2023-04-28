@@ -1,7 +1,7 @@
 # LuaPipe
 ### LuaPipe is a roblox module that makes communicating between the server and clients much easier
 
-## **Client Example**
+## Client Example
 ```lua
 local Pythonize = require(...) -- Gets the pythonizing function using require
 
