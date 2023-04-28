@@ -35,6 +35,15 @@ end)
 
 ### To destroy a pipe, use the Destroy function
 ```lua
+local Pipe = LuaPipe:GetPipe("TestPipe")
+Pipe:Destroy() -- Pipe will be destroyed and the server/client will not longer receive data
+```
+### Use the IsAvailable function to check if pipe is destroyed/hasn't been initialized
+```lua
+local Pipe = LuaPipe:GetPipe("TestPipe")
+print(Pipe:IsAvailable()) -- true
+
 Pipe:Destroy()
+print(Pipe:IsAvailable()) -- false
 ```
 
