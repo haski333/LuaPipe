@@ -10,7 +10,27 @@ local RedeemCodePipe = LuaPipe:GetPipe("RedeemCode")
 Redeem.MouseButton1Click:Connect(function()
 	RedeemCodePipe:Call(CodeTextBox.Text)
 end)
+```
+## Server Example
+```lua
+local LuaPipe = require(...)
 
+local CashCodes = {
+	["LuckyCode"] = 100,
+	["SecretCode"] = 100
+} -- A table of codes that players can reedem
+
+local RedeemCodePipe = LuaPipe:GetPipe("RedeemCode") -- Creates pipe for communication
+
+RedeemCodePipe(function(Player, Code) -- Call the pipe like a function to start recieving sent data
+	local Cash = CashCodes[Code]
+	if not Cash then -- Code sent doesn't exist
+		print("Code is incorrect!")
+	end
+	
+	print("Code is correct!")
+	Player.Cash.Value += Cash -- Increases cash by the number of cash from the code
+end)
 ```
 
 # **Notes**
