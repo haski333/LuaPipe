@@ -1,5 +1,5 @@
 # LuaPipe
-### Pythonizer is a roblox module that makes communicating between the server and clients much easier
+### LuaPipe is a roblox module that makes communicating between the server and clients much easier
 
 ## **Creating a pythonized table**
 ```lua
