@@ -5,10 +5,10 @@
 ```lua
 local LuaPipe = require(...)
 
-local RedeemCodePipe = LuaPipe:GetPipe("RedeemCode")
+local RedeemCodePipe = LuaPipe:GetPipe("RedeemCode") -- Gets a pipe created by the server by a name
 
-Redeem.MouseButton1Click:Connect(function()
-	RedeemCodePipe:Call(CodeTextBox.Text)
+Redeem.MouseButton1Click:Connect(function() -- Event when reedem button is clicked
+    RedeemCodePipe:Send(CodeTextBox.Text) --Calls pipe and sends arguments to the reciever on the server
 end)
 ```
 ## Server Example
