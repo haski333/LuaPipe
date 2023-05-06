@@ -4,12 +4,16 @@ local RunService = game:GetService("RunService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ServerStorage = game:GetService("ServerStorage")
 
+local RemotesLocation = Instance.new("Folder")
+RemotesLocation.Name = "__LuaPipeRemotes__"
+RemotesLocation.Parent = ReplicatedStorage
+
 LuaPipe.Pipe = {
 	["Name"] = nil,
 	["ConectedRemote"] = nil,
 	["ConnectedEventFunction"] = nil,
 	["CommunicationType"] = "RemoteEvent",
-	["Location"] = ReplicatedStorage,
+	["Location"] = RemotesLocation,
 } -- Pipe
 
 LuaPipe.Pipe.__index = LuaPipe.Pipe
@@ -47,7 +51,7 @@ function LuaPipe:GetPipe(PipeName: string) -- Gets/Creates pipe with specific na
 		local ConnectedRemote = LuaPipe.Pipe.Location:FindFirstChild(PipeName)
 		local Pipe = {}
 		setmetatable(Pipe, self.Pipe)
-		
+
 		Pipe.Name = PipeName
 		Pipe.ConnectedRemote = ConnectedRemote
 		return Pipe
@@ -76,7 +80,7 @@ function LuaPipe.Pipe:Destroy()
 
 		self.ConnectedRemote = nil
 		self.ConnectedEventFunction = nil
-		
+
 		LuaPipe.Pipes[self.Name] = nil
 	end
 end
