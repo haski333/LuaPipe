@@ -11,7 +11,7 @@ local LuaPipe = require(...)
 local RedeemCodePipe = LuaPipe:GetPipe("RedeemCode") -- Gets a pipe created from the server by a name
 
 Redeem.MouseButton1Click:Connect(function() -- Connects a function when the reedem button is clicked
-    RedeemCodePipe:Dispatch(CodeTextBox.Text) --Calls pipe and sends arguments to the receiver
+    RedeemCodePipe:Dispatch(CodeTextBox.Text) -- Dispatches pipe and sends parameters to the receiver
 end)
 ```
 ## Server Example
@@ -44,7 +44,7 @@ local JumpscarePipe = LuaPipe:GetPipe("Jumpscare")
 local JumpscareData = {
     ["Duration"] = 1
 }
-JumpscarePipe:Dispatch(Player, JumpscareData) --Jumpscares target player
+JumpscarePipe:Dispatch(Player, JumpscareData) -- Jumpscares target player
 ```
 - Else, calling all clients will just be passing no `Client/Player`
 ```lua
