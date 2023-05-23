@@ -44,7 +44,7 @@ local JumpscarePipe = LuaPipe:GetPipe("Jumpscare")
 local JumpscareData = {
     ["Duration"] = 1
 }
-JumpscarePipe:Call(Player, JumpscareData) --Jumpscares target player
+JumpscarePipe:Dispatch(Player, JumpscareData) --Jumpscares target player
 ```
 - Else, calling all clients will just be passing no `Client/Player`
 ```lua
@@ -53,7 +53,7 @@ local JumpscarePipe = LuaPipe:GetPipe("Jumpscare")
 local JumpscareData = {
     ["Duration"] = 1
 }
-JumpscarePipe:Call(JumpscareData) -- Jumpscares all clients/players
+JumpscarePipe:Dispatch(JumpscareData) -- Jumpscares all clients/players
 ```
 ### To destroy a pipe, use the `Destroy` function
 ```lua
