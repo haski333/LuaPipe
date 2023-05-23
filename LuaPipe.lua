@@ -58,7 +58,7 @@ function LuaPipe:GetPipe(PipeName: string) -- Gets/Creates pipe with specific na
 	end
 end
 
-function LuaPipe.Pipe:Call(...)
+function LuaPipe.Pipe:Dispatch(...)
 	if RunService:IsServer() then -- Called by server
 		local Args = {...}
 		if typeof(Args[1]) == "Instance" and Args[1]:IsA("Player") then
