@@ -29,6 +29,7 @@ RedeemCodePipe(function(Player, Code) -- Call the pipe to start listening and pa
     local Cash = CashCodes[Code]
     if not Cash then -- Code sent doesn't exist
 	print("Code is incorrect!")
+	return
     end
 	
     print("Code is correct!")
