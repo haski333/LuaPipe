@@ -59,7 +59,7 @@ JumpscarePipe:Dispatch(JumpscareData) -- Jumpscares all clients/players
 ### To destroy a pipe, use the `Destroy` function
 ```lua
 local Pipe = LuaPipe:GetPipe("TestPipe")
-Pipe:Destroy() -- Pipe will be destroyed and the server/client will not longer receive data
+Pipe:Destroy() -- Pipe will be destroyed and the server/client will no longer receive data
 ```
 ### Use the `IsAvailable` function to check if pipe is destroyed/hasn't been initialized
 ```lua
