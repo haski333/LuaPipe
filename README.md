@@ -25,7 +25,7 @@ local CashCodes = {
 
 local RedeemCodePipe = LuaPipe:GetPipe("RedeemCode") -- Creates pipe for communication
 
-RedeemCodePipe(function(Player, Code) -- Call the pipe to start listening and pass a function to be called on calls
+RedeemCodePipe(function(Player, Code) -- Call the pipe to start listening and set your callback
     local Cash = CashCodes[Code]
     if not Cash then -- Code sent doesn't exist
 	print("Code is incorrect!")
