@@ -11,7 +11,7 @@ local LuaPipe = require(...)
 local RedeemCodePipe = LuaPipe:GetPipe("RedeemCode") -- Gets a pipe created from the server by a name
 
 Redeem.MouseButton1Click:Connect(function() -- Connects a function when the reedem button is clicked
-    RedeemCodePipe:Dispatch(CodeTextBox.Text) -- Dispatches pipe and sends parameters to the receiver
+    RedeemCodePipe:Dispatch(CodeTextBox.Text) -- Dispatches pipe data and sends parameters to the receiver
 end)
 ```
 ## Server Example
