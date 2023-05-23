@@ -38,7 +38,7 @@ end)
 ```
 ## On the server, LuaPipe takes care of calling one **`Client`** or `All clients`
 
-- To only call one client, make the first argument the target `Client/Player`
+- To only call one client, make the first parameter the target `Client/Player`
 ```lua
 local JumpscarePipe = LuaPipe:GetPipe("Jumpscare")
 
