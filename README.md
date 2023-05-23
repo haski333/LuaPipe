@@ -36,7 +36,7 @@ RedeemCodePipe(function(Player, Code) -- Call the pipe to start listening and se
     Player.Cash.Value += Cash -- Increases cash by the number of cash from the code
 end)
 ```
-## On the server, LuaPipe takes care of dispatching pipe data for a **`Client`** or `All clients`
+### On the server, LuaPipe takes care of dispatching pipe data for a **`Client`** or `All clients`
 
 - To only call one client, make the first parameter the target `Client/Player`
 ```lua
